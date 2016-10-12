@@ -88,7 +88,7 @@
 
 				// default options
 				settings = {
-					checkout				: { type: "Email", email: "leoghitolox99@gmail.com" },
+					checkout				: { type: "SendForm", email: "leoghitolox99@gmail.com" },
 					currency				: "IDR",
 					language				: "english-us",
 
