@@ -1,0 +1,104 @@
+<!-- paste this between the head of your page -->
+<script src="simpleCart.js"></script>
+<script>
+simpleCart({ 
+    checkout: { 
+        type: "SendForm" , 
+        url: "http://yoursite/yourfolder/sendcart.php" ,
+        method: "POST" 
+    } 
+});
+</script>
+
+
+<!-- This script is te help the form to work. -->
+<script>
+simpleCart.bind( 'beforeCheckout' , function( data ){
+data.first_name = document.getElementById("first_name").value;
+data.last_name = document.getElementById("last_name").value;
+data.email = document.getElementById("email").value;
+data.phone = document.getElementById("phone").value;
+data.comments = document.getElementById("comments").value;
+data.adress = document.getElementById("adress").value;
+});
+</script>
+
+
+
+<!-- Form -->
+<center>
+<form action="sendcart.php" method="post"> 
+<table width="400" border="0" cellspacing="2" cellpadding="0"> 
+<tr> 
+<td width="29%" class="bodytext">Family name:</td> 
+<td width="71%"><input name="last_name" type="text" id="last_name" size="32"></td> 
+</tr> 
+<tr> 
+<td width="29%" class="bodytext">Name:</td> 
+<td width="71%"><input name="first_name" type="text" id="first_name" size="32"></td> 
+</tr> 
+<tr> 
+<td class="bodytext">Email:</td> 
+<td><input name="email" type="text" id="email" size="32"></td> 
+</tr> 
+<tr> 
+<td class="bodytext">Comment:</td> 
+<td><textarea name="comments" cols="45" rows="6" id="comments" class="bodytext"></textarea></td> 
+</tr> 
+<tr> 
+<td class="bodytext">phone number:</td> 
+<td><textarea name="phone" cols="45" id="phone" class="bodytext"></textarea></td> 
+</tr> 
+<tr>
+<td class="bodytext">Address:</td> 
+<td><textarea name="adress" cols="45" id="adress" class="bodytext"></textarea></td> 
+</tr>
+</table> 
+</form>
+</center>
+
+
+
+<!-- shelfitems -->
+<div class="simpleCart_shelfItem">
+  <h2 class="item_name"> Awesome T-shirt </h2>
+<p>  <input type="text" value="1" class="item_Quantity"><br>
+  <span class="item_price">$35.99</span><br>
+  <a class="item_add" href="javascript:;"> Add to Cart </a></p>
+</div>
+
+
+<!-- create a checkout button -->
+<a href="javascript:;" class="simpleCart_checkout"></a>
+
+<!-- button to empty the cart -->
+<a href="javascript:;" class="simpleCart_empty"></a>
+
+<!-- show the cart -->
+<div class="simpleCart_items"></div>
+
+<!-- cart total (ex. $23.11)-->
+<div class="simpleCart_total"></div>
+
+<!-- cart quantity (ex. 3) -->
+<div class="simpleCart_quantity"></div>
+
+<!-- tax cost (ex. $1.38) -->
+<div class="simpleCart_tax"></div>
+
+<!-- tax rate (ex. %0.6) -->
+<div class="simpleCart_taxRate"></div>
+
+<!-- shipping (ex. $5.00) -->
+<div class="simpleCart_shipping"></div>
+
+<!-- grand total, including tax and shipping (ex. $28.49) -->
+<div class="simpleCart_grandTotal"></div>
+
+
+
+<a href="javascript:;" class="simpleCart_empty">Empty</a>
+
+<a href="javascript:;" class="simpleCart_checkout">Checkout</a>
+
+<div class="simpleCart_items"></div>
